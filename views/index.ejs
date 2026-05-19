@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 class="header">Track your expenses</h1>
+    <div class="card-container">
+        <%  for(let expense of expenses){  %>
+            <div class="expense">
+                <p>ID:<%= expense.id %></p>
+                <p>Title&nbsp;:&nbsp;<%= expense.title %></p>
+                <p>Amount&nbsp;:&nbsp;<%= expense.amount %></p>
+                <p>Category&nbsp;:&nbsp;<%= expense.category %></p>
+                <p>Date&nbsp;:&nbsp;<%= expense.date %></p>
+                <div class="link">
+                    <form action="/expenses/<%= expense.id %>">
+                        <button class="link-style">Details</button>
+                    </form>
+                    <form method="get" action="/expenses/<%= expense.id %>/edit">
+                        <button class="link-style">Update</button>
+                    </form>
+                    <form method="POST" action="/expenses/<%= expense.id %>?_method=DELETE" >
+                        <button class="link-style">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <%   } %>
+        <div class="create-new">
+            <a href="/expenses/new" >+</a>
+        </div>
+        
+    </div>
+</body>
+</html>
