@@ -4,7 +4,7 @@ const app=express();
 const path=require("path");
 var methodOverride=require("method-override");
 // const { title } = require("process");
-const port=8080;
+const port = process.env.PORT || 8080;
 
 app.use(methodOverride("_method"));
 app.set("view engine","ejs");//to set the view engine as ejs
