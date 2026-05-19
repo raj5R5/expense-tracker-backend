@@ -28,6 +28,8 @@ A CRUD-based expense management system built using Node.js, Express.js and EJS.
 | PATCH | /expenses/:id | Update expense |
 | DELETE | /expenses/:id | Delete expense |
 
+## Live Demo
+https://expense-tracker-backend-deo9.onrender.com/expenses
 ## Run Locally
 
 ```bash
