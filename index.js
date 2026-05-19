@@ -45,6 +45,11 @@ let expenses=[
    }
 ];
 
+
+app.get("/",(req,res)=>{
+   res.redirect("/expenses");
+});
+
 app.get("/expenses",(req,res)=>{
    res.render("index",{expenses});
 });
